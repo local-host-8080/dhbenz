@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>网址导航</title>
     <meta name="keywords" content="大兴网址导航,奔驰网址导航,奔驰网站大全">
-    <meta name="description" content="给财富加一个 O，给未来更多选择"/>
+    <meta name="description" content="给财富加一个O，给未来更多选择"/>
     <link rel="shortcut icon" href="static/img/favicon.ico">
     <link href="static/css/style.css" rel="stylesheet" type="text/css">
 	<script>
@@ -15,7 +15,7 @@
 		  var s = document.getElementsByTagName("script")[0]; 
 		  s.parentNode.insertBefore(hm, s);
 		})();
-</script>
+	</script>
 
 </head>
 <body>
@@ -85,7 +85,6 @@
 		  <li><a href="https://estore.mercedes-benz.com.cn/estore-admin/auth/system/login" class="jj-list-link" target="_blank">官方认证二手车</a></li>
 		  <li><a href="https://soo.mercedes-benz.com.cn/" class="jj-list-link" target="_blank">SOO</a></li>
 		  <li><a href="https://bvms.mercedes-benz.com.cn/" class="jj-list-link" target="_blank">BVMS</a></li>
-		  
         </ul>
       </div>
       <div class="jj-list">
@@ -106,7 +105,6 @@
 		  <li><a href="" class="jj-list-link" target="_blank">-</a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
-		  
         </ul>
       </div>
       <div class="jj-list">
@@ -127,7 +125,6 @@
 		  <li><a href="https://m.longsky.com/login.aspx" class="jj-list-link" target="_blank">长远移动系统</a></li>
 		  <li><a href="https://tmcj.longsky.com/login.aspx" class="jj-list-link" target="_blank">长远透明车间</a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
-        
         </ul>
       </div>
       <div class="jj-list">
@@ -141,7 +138,6 @@
 		  <li><a href="https://mbbadge-iot.mlamp.cn/dashboard" class="jj-list-link" target="_blank">奔驰IOT</a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
-
         </ul>
 	  </div>
 	  <div class="jj-list">
@@ -159,7 +155,6 @@
 		  <li><a href="https://www.fanruan.com/androidapp-v11" class="jj-list-link" target="_blank">BI报表-安卓</a></li>
 		  <li><a href="https://apps.apple.com/cn/app/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90v11/id1592053200" class="jj-list-link" target="_blank">BI报表-苹果</a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
-
         </ul>
 	  </div>
 	  <div class="jj-list">
@@ -177,7 +172,6 @@
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
 		  <li><a href="" class="jj-list-link" target="_blank"> </a></li>
-
         </ul>
       </div>
     </div>
@@ -185,13 +179,29 @@
   </div>
 </div>
 <footer class="inner-center footer">
-  <p style="margin-top:8px;">
+  <p style="margin-top:10px;"><div id="showTime" style="color:#8C8C8C;"></div>
 	<a href="https://dh.mooney.cc/" style="color:#8C8C8C;" target="_blank">Copyright © 2026 Hosted by local-host-8080</a>
 	<a href="https://github.com/local-host-8080/dhbenz" target="_blank"> <img src="./static/css/img/github.png" alt="" height="13" width="13"></a>
   </p>
 </footer>
 <script src="./static/js/jquery.min.js"></script>
 <script src="./static/js/keyword.js"></script>
-
+<script>
+	function updateTime(){
+		const now = new Date();
+		const weekArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		const week = weekArr[now.getDay()];
+		const timeStr = now.getFullYear() + "-"
+			+ String(now.getMonth()+1).padStart(2,'0') + "-"
+			+ String(now.getDate()).padStart(2,'0') + " "
+			+ week + " "
+			+ String(now.getHours()).padStart(2,'0') + ":"
+			+ String(now.getMinutes()).padStart(2,'0') + ":"
+			+ String(now.getSeconds()).padStart(2,'0');
+		document.getElementById("showTime").innerText = timeStr;
+	}
+	updateTime();
+	setInterval(updateTime, 1000);
+</script>
 </body>
 </html>
