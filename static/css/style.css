@@ -67,7 +67,7 @@ textarea {
 .logo-box {
     display: flex;
     overflow: hidden;
-    margin-left: 250px;
+    margin-left: 200px;
     align-items: center;
 }
 .logo-left {

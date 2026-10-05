@@ -26,7 +26,7 @@
         <img src="./static/img/logo.gif" alt="logo">
       </div>
       <div class="logo-right">
-        <span>常用网址导航</span>
+        <span id="showGreet"></span>
       </div>
     </div>
     <!-- slogan end -->
@@ -263,6 +263,48 @@
 			+ String(now.getMinutes()).padStart(2,'0') + ":"
 			+ String(now.getSeconds()).padStart(2,'0');
 		document.getElementById("showTime").innerText = timeStr;
+	}
+	updateTime();
+	setInterval(updateTime, 1000);
+</script>
+<script>
+	function updateTime(){
+		const now = new Date();
+		const hour = now.getHours();
+		const weekArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		const weekShortArr = ["周日","周一","周二","周三","周四","周五","周六"];
+		const weekFull = weekArr[now.getDay()];
+		const weekShort = weekShortArr[now.getDay()];
+
+		let greet = "";
+		if (hour >= 5 && hour < 9) {
+			greet = "早上好";
+		} else if (hour >=9 && hour <12) {
+			greet = "上午好";
+		} else if (hour >=12 && hour <14) {
+			greet = "中午好";
+		} else if (hour >=14 && hour <18) {
+			greet = "下午好";
+		} else if (hour >=18 && hour <23) {
+			greet = "晚上好";
+		} else {
+			greet = "夜深了";
+		}
+
+		const timeStr = now.getFullYear() + "-"
+			+ String(now.getMonth()+1).padStart(2,'0') + "-"
+			+ String(now.getDate()).padStart(2,'0') + " "
+			+ weekFull + " "
+			+ String(now.getHours()).padStart(2,'0') + ":"
+			+ String(now.getMinutes()).padStart(2,'0') + ":"
+			+ String(now.getSeconds()).padStart(2,'0');
+
+		const greetStr = greet + " 『 " + weekShort + " "
+			+ String(now.getHours()).padStart(2,'0') + ":"
+			+ String(now.getMinutes()).padStart(2,'0') + " 』";
+
+		document.getElementById("showTime").innerText = timeStr;
+		document.getElementById("showGreet").innerText = greetStr;
 	}
 	updateTime();
 	setInterval(updateTime, 1000);
