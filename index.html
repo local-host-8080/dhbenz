@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>网址导航</title>
-    <meta name="keywords" content="大兴网址导航,奔驰网址导航,奔驰网站大全">
+    <meta name="keywords" content="网址导航,网站大全">
     <meta name="description" content="给财富加一个O，给未来更多选择"/>
     <link href="static/img/favicon.ico" rel="shortcut icon">
     <link href="static/css/style.css" rel="stylesheet" type="text/css">
@@ -253,23 +253,6 @@
 <script>
 	function updateTime(){
 		const now = new Date();
-		const weekArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
-		const week = weekArr[now.getDay()];
-		const timeStr = now.getFullYear() + "-"
-			+ String(now.getMonth()+1).padStart(2,'0') + "-"
-			+ String(now.getDate()).padStart(2,'0') + " "
-			+ week + " "
-			+ String(now.getHours()).padStart(2,'0') + ":"
-			+ String(now.getMinutes()).padStart(2,'0') + ":"
-			+ String(now.getSeconds()).padStart(2,'0');
-		document.getElementById("showTime").innerText = timeStr;
-	}
-	updateTime();
-	setInterval(updateTime, 1000);
-</script>
-<script>
-	function updateTime(){
-		const now = new Date();
 		const hour = now.getHours();
 		const weekArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
 		const weekShortArr = ["周日","周一","周二","周三","周四","周五","周六"];
@@ -282,9 +265,9 @@
 		} else if (hour >=9 && hour <12) {
 			greet = "上午好";
 		} else if (hour >=12 && hour <14) {
-			greet = "中午好";
+			greet = "中午了";
 		} else if (hour >=14 && hour <18) {
-			greet = "下午好";
+			greet = "下午了";
 		} else if (hour >=18 && hour <23) {
 			greet = "晚上好";
 		} else {
@@ -308,6 +291,18 @@
 	}
 	updateTime();
 	setInterval(updateTime, 1000);
+</script>
+<script>
+console.log(`
+  Hey，我的朋友：
+  
+  (◕‿◕)ゞ
+  
+  欢迎打开控制台，好奇心值得鼓励！
+`);
+console.log("%c> Welcome to mooney.cc", "color:#888;");
+console.log("%c> 服务器运行正常，无告警 ✅", "color:#42b983;");
+console.log("%c> 不要在此粘贴来路不明代码哦！", "color:#ff4d4f;");
 </script>
 </body>
 </html>
