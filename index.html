@@ -42,7 +42,7 @@
                 maxlength="100"
                 autocomplete="off"
                 type="text"
-                placeholder="输入心中期许，探索更多可能">
+				placeholder="">
           <div class="clear-keyword" id="clear_keyword" title="清空">x</div>
         </div>
         <!--  搜索引擎 start  -->
@@ -237,6 +237,19 @@
 </footer>
 <script src="./static/js/jquery.min.js"></script>
 <script src="./static/js/keyword.js"></script>
+<script>
+	const searchInput = document.getElementById('search_keyword');
+	async function getHitokoto() {
+	  try {
+		const res = await fetch('https://v1.hitokoto.cn/');
+		const data = await res.json();
+		searchInput.placeholder = data.hitokoto;
+	  } catch (err) {
+		searchInput.placeholder = "输入心中期许，探索更多可能";
+	  }
+	}
+	getHitokoto();
+</script>
 <script>
 	function updateTime(){
 		const now = new Date();
