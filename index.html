@@ -7,6 +7,7 @@
     <meta name="description" content="给财富加一个O，给未来更多选择"/>
     <link href="static/img/favicon.ico" rel="shortcut icon">
     <link href="static/css/style.css" rel="stylesheet" type="text/css">
+	<link href="static/css/BGeffects.css" rel="stylesheet" type="text/css"/>
 	<script>
 		var _hmt = _hmt || [];
 		(function() {
@@ -18,7 +19,7 @@
 	</script>
 </head>
 <body>
-<div class="inner-center main">
+<div class="inner-center main content">
   <div class="content-inside">
     <!-- slogan start -->
     <div class="logo-box">
@@ -237,6 +238,9 @@
 </footer>
 <script src="./static/js/jquery.min.js"></script>
 <script src="./static/js/keyword.js"></script>
+<canvas id="particleCanvas"></canvas>
+<script src="./static/js/BGeffects.js"></script>
+<!-- <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/autoload.js"></script>-->
 <script>
 	const searchInput = document.getElementById('search_keyword');
 	async function getHitokoto() {
