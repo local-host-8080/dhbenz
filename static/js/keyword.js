@@ -60,21 +60,27 @@ $(function () {
     if(bl){
     	keywordChange(keyword);
     }
-  }).on('blur', function () { 
+  }).on('blur', function () {
+    // 延迟隐藏，让鼠标点击联想项时先完成选择。
+    setTimeout(function() {
+      $('#search_result').hide();
+    }, 150);
+  }).on('focus', function () {
+    var keyword = $(this).val();
+    keywordChange(keyword);
+  });
+
+  // 保持输入框焦点，避免 blur 提前隐藏联想列表。
+  $('#search_result').on('mousedown', 'li', function (event) {
+    event.preventDefault();
+  });
+
   // 推荐结果跳转
   $('#search_result').on('click', 'li', function () {
     var word = $(this).text();
     $('#search_keyword').val(word);
     openSearch(word);
     $('#search_result').hide();
-  });
-  // 解决失焦和点击事件冲突问题
-  setTimeout(function() {
-    $('#search_result').hide();
-  }, 100)
-  }).on('focus', function () {
-    var keyword = $(this).val();
-    keywordChange(keyword);
   });
   
   function moveChange(e){
